@@ -50,6 +50,7 @@ h3 { font-size: 1.08rem; }
 p, ul { margin: 0; max-width: 64ch; }
 ul { padding-left: 20px; display: grid; gap: 6px; }
 
+main { display: grid; gap: 40px; }
 section { display: grid; gap: 14px; }
 
 .leitspruch { font-style: italic; color: var(--nebel); }
