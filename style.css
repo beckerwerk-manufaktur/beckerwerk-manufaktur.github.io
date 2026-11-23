@@ -1,0 +1,91 @@
+/* Beckerwerk Manufaktur – Farben laut Markenkonzept; nur Systemschriften, keine externen Dateien */
+:root {
+  --tanne: #2F4A3F;
+  --messing: #B8893A;
+  --leinen: #F1F0E8;
+  --tinte: #23302A;
+  --nebel: #66736B;
+  --papier: #FBFAF5;
+  --linie: #D8D6CA;
+  --f-kopf: Bahnschrift, "DIN Alternate", "Arial Narrow", system-ui, sans-serif;
+  --f-text: "Segoe UI", Arial, system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--leinen); }
+
+body {
+  margin: 0;
+  background: var(--leinen);
+  color: var(--tinte);
+  font-family: var(--f-text);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.seite {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 48px max(20px, env(safe-area-inset-right, 0px)) 32px max(20px, env(safe-area-inset-left, 0px));
+  display: grid;
+  gap: 48px;
+}
+
+.kopf { display: grid; gap: 20px; justify-items: start; }
+.kopf img { width: min(100%, 420px); height: auto; }
+.kopf a { line-height: 0; }
+
+h1, h2, h3 {
+  font-family: var(--f-kopf);
+  color: var(--tanne);
+  line-height: 1.2;
+  font-weight: 600;
+  margin: 0;
+}
+h1 { font-size: 2rem; }
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.08rem; }
+
+p, ul { margin: 0; max-width: 64ch; }
+ul { padding-left: 20px; display: grid; gap: 6px; }
+
+section { display: grid; gap: 14px; }
+
+.leitspruch { font-style: italic; color: var(--nebel); }
+
+.hinweis {
+  background: var(--papier);
+  border: 1px solid var(--linie);
+  border-left: 4px solid var(--messing);
+  padding: 16px 18px;
+  display: grid;
+  gap: 8px;
+}
+
+.klein { font-size: 0.88rem; color: var(--nebel); }
+
+a { color: var(--tanne); text-underline-offset: 3px; }
+a:hover { color: var(--tinte); }
+a:focus-visible { outline: 2px solid var(--messing); outline-offset: 2px; }
+
+dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 4px 18px; }
+dt { color: var(--nebel); }
+dd { margin: 0; }
+
+.fuss {
+  border-top: 1px solid var(--linie);
+  padding-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  font-size: 0.9rem;
+  color: var(--nebel);
+}
+
+@media (max-width: 480px) {
+  body { font-size: 16px; }
+  h1 { font-size: 1.6rem; }
+  dl { grid-template-columns: 1fr; }
+  dt { margin-top: 8px; }
+}
